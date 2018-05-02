@@ -34,6 +34,7 @@ import sphinx_rtd_theme
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.todo',
+    'sphinx.ext.githubpages',
     'sphinx.ext.mathjax']
 
 # Add any paths that contain templates here, relative to this directory.
@@ -73,7 +74,7 @@ language = 'nl'
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-html_extra_path = [ "_extra" ]
+html_extra_path = [  ]
 
 
 # The name of the Pygments (syntax highlighting) style to use.

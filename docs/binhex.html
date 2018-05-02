@@ -1,0 +1,792 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="nl" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="nl" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Decimaal, hexadecimaal , ASCII en binair &mdash; Programmeerclub  documentatie</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="author" title="Over deze documenten" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Zoeken" href="search.html" />
+    <link rel="next" title="Pointers and references" href="pointers.html" />
+    <link rel="prev" title="Programmeerclub verdieping" href="index.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Programmeerclub
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Inhoud:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Decimaal, hexadecimaal , ASCII en binair</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-decimaal">Opdracht decimaal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-hexadecimaal">Opdracht hexadecimaal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-ascii">Opdracht ascii</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-binair">Opdracht binair</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdrach-hex2bin">Opdrach hex2bin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-bin2hex">Opdracht bin2hex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bonus">Bonus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uitwerkingen">Uitwerkingen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pointers.html">Pointers and references</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modulo_01.html">Modulo rekenen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="caesar_cipher.html">Caesar versleuteling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Colofon</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Programmeerclub</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Decimaal, hexadecimaal , ASCII en binair</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/binhex.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="decimaal-hexadecimaal-ascii-en-binair">
+<h1>Decimaal, hexadecimaal , ASCII en binair<a class="headerlink" href="#decimaal-hexadecimaal-ascii-en-binair" title="Permalink naar deze titel">¶</a></h1>
+<p>Van kinds af aan hebben we met het decimaale stelsel leren rekenen en het rekenen hiermee voelt
+daarom natuurlijk aan. Voor computers is de basis eenheid het binraire stelsel waarbij een waarde
+enkel een 0 of een 1 kan zijn dit noemen we bits. 8 bits samen is een byte. De doelstelling is om een
+beetje gevoel te krijgen voor deze waardes.</p>
+<div class="section" id="opdracht-decimaal">
+<h2>Opdracht decimaal<a class="headerlink" href="#opdracht-decimaal" title="Permalink naar deze titel">¶</a></h2>
+<p>We gaan een paar programma’s schrijven om e.a. om te zetten. en beginnen met het afdrukken van de getallen van 0 tot 255</p>
+<p>Schrijf het volgende programmer over in een bestand met naam binary_count.c</p>
+<div class="highlight-default notranslate" id="binary-count-c"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#include &lt;stdio.h&gt;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="o">//</span> <span class="n">we</span> <span class="n">gaan</span> <span class="n">van</span> <span class="mi">0</span> <span class="n">tot</span> <span class="mi">255</span> <span class="n">tellen</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">teller</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">teller</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">;</span> <span class="n">teller</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%03d</span><span class="s2"> &quot;</span><span class="p">,</span> <span class="n">teller</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>256 regels passen waarschijnlijk niet op je scherm. Als je rustig door de uitvoer will kunnen lezen kan het handig zijn
+deze door te sturen naar het programma less door gebruik te maken van pipes</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./binary_count <span class="p">|</span> less
+</pre></div>
+</div>
+<p>Vervolgens kan je met spatie scrollen naar de volgende pagina. Met q kan je uit het programma stappen</p>
+</div>
+<div class="section" id="opdracht-hexadecimaal">
+<h2>Opdracht hexadecimaal<a class="headerlink" href="#opdracht-hexadecimaal" title="Permalink naar deze titel">¶</a></h2>
+<p>We gaan nu na regel 7 de hexadecimaale waarde toevoegen. Zorg er voor dat net als bij de decimale notatie
+de regels netjes aangelijnd blijven.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; man <span class="m">3</span> <span class="nb">printf</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>	<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%02x</span><span class="s2"> &quot;</span><span class="p">,</span> <span class="n">teller</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>De eerste 20 lijnen van de uitvoer zouden er als volg uit moeten zien.</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="mi">000</span> <span class="mi">00</span> 
+<span class="mi">001</span> <span class="mi">01</span> 
+<span class="mi">002</span> <span class="mi">02</span> 
+<span class="mi">003</span> <span class="mi">03</span> 
+<span class="mi">004</span> <span class="mi">04</span> 
+<span class="mi">005</span> <span class="mi">05</span> 
+<span class="mi">006</span> <span class="mi">06</span> 
+<span class="mi">007</span> <span class="mi">07</span> 
+<span class="mi">008</span> <span class="mi">08</span> 
+<span class="mi">009</span> <span class="mi">09</span> 
+<span class="mi">010</span> <span class="mi">0</span><span class="n">a</span> 
+<span class="mi">011</span> <span class="mi">0</span><span class="n">b</span> 
+<span class="mi">012</span> <span class="mi">0</span><span class="n">c</span> 
+<span class="mi">013</span> <span class="mi">0</span><span class="n">d</span> 
+<span class="mi">014</span> <span class="mi">0</span><span class="n">e</span> 
+<span class="mi">015</span> <span class="mi">0</span><span class="n">f</span> 
+<span class="mi">016</span> <span class="mi">10</span> 
+<span class="mi">017</span> <span class="mi">11</span> 
+<span class="mi">018</span> <span class="mi">12</span> 
+<span class="mi">019</span> <span class="mi">13</span> 
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="opdracht-ascii">
+<h2>Opdracht ascii<a class="headerlink" href="#opdracht-ascii" title="Permalink naar deze titel">¶</a></h2>
+<p>Naast de decimaale waarde en hexadecimaale waardes willen we nu ook graag de ascii representatie zien.
+Hiervoor gaan we de “%c” in het printf format statement zetten.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>man ascii
+</pre></div>
+</div>
+<p>Er bestaan niet voor alle waardes tussen 0 tot 255 en ascii representnatie. je zal daarom gebruik moeten maken
+van de isprint functie in de ctype librarie gebruik hiervoor een if / else contructie en als het teken niet afgedrukt kan worden
+vergang deze dan door en “-” teken.</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80</pre></div></td><td class="code"><div class="highlight"><pre><span></span>059 3b ; 
+060 3c &lt; 
+061 3d = 
+062 3e &gt; 
+063 3f ? 
+064 40 @ 
+065 41 A 
+066 42 B 
+067 43 C 
+068 44 D 
+069 45 E 
+070 46 F 
+071 47 G 
+072 48 H 
+073 49 I 
+074 4a J 
+075 4b K 
+076 4c L 
+077 4d M 
+078 4e N 
+079 4f O 
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="opdracht-binair">
+<h2>Opdracht binair<a class="headerlink" href="#opdracht-binair" title="Permalink naar deze titel">¶</a></h2>
+<p>Binnen de computer worden alle waardes binair opgeslagen. We gaan nu een string representatie van
+deze binrair getallen maken. Er is helaas geen printf argument on dit te doen we zullen dus nu zelfs iets schrijven. Voeg
+de volgende regels toe</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span></span>        <span class="o">//</span> <span class="n">geheel</span><span class="o">.</span>
+<span class="hll">	<span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">bit_nummer</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="n">bit_nummer</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">bit_nummer</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">	    <span class="k">if</span> <span class="p">((</span><span class="n">teller</span> <span class="o">&gt;&gt;</span> <span class="n">bit_nummer</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">		<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">);</span>
+</span><span class="hll">	    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class="hll">		<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">);</span>
+</span><span class="hll">	    <span class="p">}</span>
+</span><span class="hll">	<span class="p">}</span>
+</span>	<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Neem rustig te tijd om naar de binaire waarde te kijken er zit een zeer elegant patroon in.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>000 00 - 00000000
+001 01 - 00000001
+002 02 - 00000010
+003 03 - 00000011
+004 04 - 00000100
+005 05 - 00000101
+006 06 - 00000110
+007 07 - 00000111
+008 08 - 00001000
+009 09 - 00001001
+010 0a - 00001010
+011 0b - 00001011
+012 0c - 00001100
+013 0d - 00001101
+014 0e - 00001110
+015 0f - 00001111
+016 10 - 00010000
+017 11 - 00010001
+018 12 - 00010010
+019 13 - 00010011
+020 14 - 00010100
+021 15 - 00010101
+022 16 - 00010110
+023 17 - 00010111
+024 18 - 00011000
+025 19 - 00011001
+026 1a - 00011010
+027 1b - 00011011
+028 1c - 00011100
+029 1d - 00011101
+030 1e - 00011110
+031 1f - 00011111
+032 20   00100000
+033 21 ! 00100001
+034 22 &quot; 00100010
+035 23 # 00100011
+036 24 $ 00100100
+037 25 % 00100101
+038 26 &amp; 00100110
+039 27 &#39; 00100111
+040 28 ( 00101000
+041 29 ) 00101001
+042 2a * 00101010
+043 2b + 00101011
+044 2c , 00101100
+045 2d - 00101101
+046 2e . 00101110
+047 2f / 00101111
+048 30 0 00110000
+049 31 1 00110001
+050 32 2 00110010
+051 33 3 00110011
+052 34 4 00110100
+053 35 5 00110101
+054 36 6 00110110
+055 37 7 00110111
+056 38 8 00111000
+057 39 9 00111001
+058 3a : 00111010
+059 3b ; 00111011
+060 3c &lt; 00111100
+061 3d = 00111101
+062 3e &gt; 00111110
+063 3f ? 00111111
+064 40 @ 01000000
+065 41 A 01000001
+066 42 B 01000010
+067 43 C 01000011
+068 44 D 01000100
+069 45 E 01000101
+070 46 F 01000110
+071 47 G 01000111
+072 48 H 01001000
+073 49 I 01001001
+074 4a J 01001010
+075 4b K 01001011
+076 4c L 01001100
+077 4d M 01001101
+078 4e N 01001110
+079 4f O 01001111
+080 50 P 01010000
+081 51 Q 01010001
+082 52 R 01010010
+083 53 S 01010011
+084 54 T 01010100
+085 55 U 01010101
+086 56 V 01010110
+087 57 W 01010111
+088 58 X 01011000
+089 59 Y 01011001
+090 5a Z 01011010
+091 5b [ 01011011
+092 5c \ 01011100
+093 5d ] 01011101
+094 5e ^ 01011110
+095 5f _ 01011111
+096 60 ` 01100000
+097 61 a 01100001
+098 62 b 01100010
+099 63 c 01100011
+100 64 d 01100100
+101 65 e 01100101
+102 66 f 01100110
+103 67 g 01100111
+104 68 h 01101000
+105 69 i 01101001
+106 6a j 01101010
+107 6b k 01101011
+108 6c l 01101100
+109 6d m 01101101
+110 6e n 01101110
+111 6f o 01101111
+112 70 p 01110000
+113 71 q 01110001
+114 72 r 01110010
+115 73 s 01110011
+116 74 t 01110100
+117 75 u 01110101
+118 76 v 01110110
+119 77 w 01110111
+120 78 x 01111000
+121 79 y 01111001
+122 7a z 01111010
+123 7b { 01111011
+124 7c | 01111100
+125 7d } 01111101
+126 7e ~ 01111110
+127 7f - 01111111
+128 80 - 10000000
+129 81 - 10000001
+130 82 - 10000010
+131 83 - 10000011
+132 84 - 10000100
+133 85 - 10000101
+134 86 - 10000110
+135 87 - 10000111
+136 88 - 10001000
+137 89 - 10001001
+138 8a - 10001010
+139 8b - 10001011
+140 8c - 10001100
+141 8d - 10001101
+142 8e - 10001110
+143 8f - 10001111
+144 90 - 10010000
+145 91 - 10010001
+146 92 - 10010010
+147 93 - 10010011
+148 94 - 10010100
+149 95 - 10010101
+150 96 - 10010110
+151 97 - 10010111
+152 98 - 10011000
+153 99 - 10011001
+154 9a - 10011010
+155 9b - 10011011
+156 9c - 10011100
+157 9d - 10011101
+158 9e - 10011110
+159 9f - 10011111
+160 a0 - 10100000
+161 a1 - 10100001
+162 a2 - 10100010
+163 a3 - 10100011
+164 a4 - 10100100
+165 a5 - 10100101
+166 a6 - 10100110
+167 a7 - 10100111
+168 a8 - 10101000
+169 a9 - 10101001
+170 aa - 10101010
+171 ab - 10101011
+172 ac - 10101100
+173 ad - 10101101
+174 ae - 10101110
+175 af - 10101111
+176 b0 - 10110000
+177 b1 - 10110001
+178 b2 - 10110010
+179 b3 - 10110011
+180 b4 - 10110100
+181 b5 - 10110101
+182 b6 - 10110110
+183 b7 - 10110111
+184 b8 - 10111000
+185 b9 - 10111001
+186 ba - 10111010
+187 bb - 10111011
+188 bc - 10111100
+189 bd - 10111101
+190 be - 10111110
+191 bf - 10111111
+192 c0 - 11000000
+193 c1 - 11000001
+194 c2 - 11000010
+195 c3 - 11000011
+196 c4 - 11000100
+197 c5 - 11000101
+198 c6 - 11000110
+199 c7 - 11000111
+200 c8 - 11001000
+201 c9 - 11001001
+202 ca - 11001010
+203 cb - 11001011
+204 cc - 11001100
+205 cd - 11001101
+206 ce - 11001110
+207 cf - 11001111
+208 d0 - 11010000
+209 d1 - 11010001
+210 d2 - 11010010
+211 d3 - 11010011
+212 d4 - 11010100
+213 d5 - 11010101
+214 d6 - 11010110
+215 d7 - 11010111
+216 d8 - 11011000
+217 d9 - 11011001
+218 da - 11011010
+219 db - 11011011
+220 dc - 11011100
+221 dd - 11011101
+222 de - 11011110
+223 df - 11011111
+224 e0 - 11100000
+225 e1 - 11100001
+226 e2 - 11100010
+227 e3 - 11100011
+228 e4 - 11100100
+229 e5 - 11100101
+230 e6 - 11100110
+231 e7 - 11100111
+232 e8 - 11101000
+233 e9 - 11101001
+234 ea - 11101010
+235 eb - 11101011
+236 ec - 11101100
+237 ed - 11101101
+238 ee - 11101110
+239 ef - 11101111
+240 f0 - 11110000
+241 f1 - 11110001
+242 f2 - 11110010
+243 f3 - 11110011
+244 f4 - 11110100
+245 f5 - 11110101
+246 f6 - 11110110
+247 f7 - 11110111
+248 f8 - 11111000
+249 f9 - 11111001
+250 fa - 11111010
+251 fb - 11111011
+252 fc - 11111100
+253 fd - 11111101
+254 fe - 11111110
+255 ff - 11111111
+</pre></div>
+</div>
+</div>
+<div class="section" id="opdrach-hex2bin">
+<h2>Opdrach hex2bin<a class="headerlink" href="#opdrach-hex2bin" title="Permalink naar deze titel">¶</a></h2>
+<p>Maak een programma die binaire data kan omzetten in hex waardes. Deze waardes moeten worden gelezen van
+de standard invoer en worden geschreven naar de standard uitvoer. gebruikt getchar en printf en leest totdat
+getchar() EOF terug geeft</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Hello, World&quot;</span> <span class="p">|</span> ./bin2hex
+48656c6c6f2c20576f726c640a
+</pre></div>
+</div>
+</div>
+<div class="section" id="opdracht-bin2hex">
+<h2>Opdracht bin2hex<a class="headerlink" href="#opdracht-bin2hex" title="Permalink naar deze titel">¶</a></h2>
+<p>Maak een programma die binaire data kan omzetten in hex waardes.
+gebruikt scanf om de hex waarde te lezen en printf voor het afdrukken.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> -n <span class="s2">&quot;476f6564207a6f210a&quot;</span> <span class="p">|</span> ./hex2bin
+</pre></div>
+</div>
+</div>
+<div class="section" id="bonus">
+<h2>Bonus<a class="headerlink" href="#bonus" title="Permalink naar deze titel">¶</a></h2>
+<p>In het voorbeeld gebruiken we voor de teller variabele van het type int. Wat gebeurd er als we hier een unsigned char
+voor gebruiken?</p>
+</div>
+<div class="section" id="uitwerkingen">
+<h2>Uitwerkingen<a class="headerlink" href="#uitwerkingen" title="Permalink naar deze titel">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="binary-count-final-c">
+<div class="code-block-caption"><span class="caption-text">binary_count_final.c</span><a class="headerlink" href="#binary-count-final-c" title="Permalink naar deze broncode">¶</a></div>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#include &lt;stdio.h&gt;</span>
+<span class="c1">#include &lt;stdlib.h&gt;</span>
+<span class="c1">#include &lt;ctype.h&gt;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="o">//</span> <span class="n">we</span> <span class="n">gaan</span> <span class="n">van</span> <span class="mi">0</span> <span class="n">tot</span> <span class="mi">255</span> <span class="n">tellen</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">teller</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">teller</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">;</span> <span class="n">teller</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%03d</span><span class="s2"> &quot;</span><span class="p">,</span> <span class="n">teller</span><span class="p">);</span>
+
+	<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%02x</span><span class="s2"> &quot;</span><span class="p">,</span> <span class="n">teller</span><span class="p">);</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="n">isprint</span><span class="p">(</span><span class="n">teller</span><span class="p">))</span> <span class="p">{</span>
+	    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%c</span><span class="s2"> &quot;</span><span class="p">,</span> <span class="n">teller</span><span class="p">);</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+	    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;- &quot;</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="o">//</span> <span class="n">helaas</span> <span class="n">heeft</span> <span class="n">de</span> <span class="n">c</span> <span class="n">librarie</span> <span class="n">geen</span> <span class="n">standard</span> <span class="n">functie</span> <span class="n">voor</span> <span class="n">het</span>
+	<span class="o">//</span> <span class="n">onzetten</span> <span class="n">van</span> <span class="n">binaire</span> <span class="n">getallen</span> <span class="n">naar</span> <span class="n">en</span> <span class="n">door</span> <span class="n">mensen</span> <span class="n">leesbaar</span>
+        <span class="o">//</span> <span class="n">geheel</span><span class="o">.</span>
+	<span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">bit_nummer</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="n">bit_nummer</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">bit_nummer</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+	    <span class="k">if</span> <span class="p">((</span><span class="n">teller</span> <span class="o">&gt;&gt;</span> <span class="n">bit_nummer</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">);</span>
+	    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">);</span>
+	    <span class="p">}</span>
+	<span class="p">}</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="bin2hex-c">
+<div class="code-block-caption"><span class="caption-text">bin2hex.c</span><a class="headerlink" href="#bin2hex-c" title="Permalink naar deze broncode">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;stdio.h&gt;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="nb">int</span> <span class="n">argc</span><span class="p">,</span> <span class="n">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nb">int</span> <span class="n">invoer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">((</span><span class="n">invoer</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">())</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%02x</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">invoer</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="hex2bin-c">
+<div class="code-block-caption"><span class="caption-text">bin2hex.c</span><a class="headerlink" href="#hex2bin-c" title="Permalink naar deze broncode">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;stdio.h&gt;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="nb">int</span> <span class="n">arg</span><span class="p">,</span> <span class="n">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">unsigned</span> <span class="nb">int</span> <span class="nb">hex</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%02x</span><span class="s2">&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="nb">hex</span><span class="p">)</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%c</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">hex</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pointers.html" class="btn btn-neutral float-right" title="Pointers and references" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Programmeerclub verdieping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, keesj.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'nl',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>
